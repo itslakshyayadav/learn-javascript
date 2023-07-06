@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Query All</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./queryAll.js"></script>
+    <script></script>
+  </head>
+  <body>
+    <div class="container mx-auto p-8 bg-gray-200 mt-12">
+      <div class="flex flex-col gap-y-4 my-8">
+        <div>
+          <label for="colorInput">Color Name*</label>
+          <!-- <input id="colorInput" type="text" placeholder="Enter a color name" /> -->
+
+          <select name="" id="colorSelect">
+            <option value="blue">Blue</option>
+            <option selected value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="cyan">Cyan</option>
+          </select>
+        </div>
+
+        <div>
+          <button
+            type="button"
+            id="changeColorBtn"
+            class="px-4 py-2 bg-teal-700 text-white"
+            onclick="changeColor()"
+          >
+            Change Color
+          </button>
+
+          <button
+            type="button"
+            id="resetBtn"
+            class="px-4 py-2 bg-gray-100"
+            onclick="reset()"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <label for="result">Color Result:</label>
+        <div id="result" class="h-20"></div>
+      </div>
+    </div>
+  </body>
+</html>
