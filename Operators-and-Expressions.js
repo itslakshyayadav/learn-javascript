@@ -1,19 +1,19 @@
-'use strict;'
-let operat = 10;
+// 'use strict;'
+// let operat = 10;
 
-operat += 5
-console.log(operat)
-
-operat -= 5
-console.log(operat)
-
-operat *= 5
-console.log(operat)
-
-// operat /= 5
+// operat += 5
 // console.log(operat)
 
-let a = 7;
-let b = 3;
+// operat -= 5
+// console.log(operat)
 
-console.log(a+b)
+// operat *= 5
+// console.log(operat)
+
+// // operat /= 5
+// // console.log(operat)
+
+// let a = 7;
+// let b = 3;
+
+// console.log(a+b)

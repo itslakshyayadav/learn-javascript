@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Tiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-16">
+    <div class="container mx-auto p-8 bg-gray-200 mt-12">
+      <div class="flex flex-col gap-y-4 my-8">
+        <div>
+          <label for="colorInput">Color Name *</label>
+        </div>
+        <div>
+          <input id="blue" type="radio" value="blue" name="colors" />
+          <label for="blue">Blue</label><br />
+
+          <input id="red" type="radio" value="red" name="colors" />
+          <label for="red">Red</label><br />
+
+          <input id="green" type="radio" value="green" name="colors" />
+          <label for="green">Green</label><br />
+
+          <input id="cyan" type="radio" value="cyan" name="colors" />
+          <label for="cyan">Cyan</label>
+
+          <p name="colors"></p>
+        </div>
+
+        <div class="flex justify-center gap-x-4">
+          <button
+            type="button"
+            id="changeColorBtn"
+            class="px-4 py-2 bg-teal-700 text-white"
+            onclick="changeColor()"
+          >
+            Change Color
+          </button>
+
+          <button
+            type="button"
+            id="resetBtn"
+            class="px-4 py-2 bg-gray-100"
+            onclick="reset()"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <label for="result">Color Result:</label>
+        <div id="result" class="h-20"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function onPageLoad() {
+      console.log("page load called");
+      setDefaultResultColor();
+    }
+
+    function setDefaultResultColor() {
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.backgroundColor = "red";
+    }
+
+    window.addEventListener("DOMContentLoaded", onPageLoad);
+
+    function changeColor() {
+      const colorSelect = document.querySelector(
+        'input[name="colors"]:checked'
+      ).value;
+      if (colorSelect) {
+        const resultDiv = document.getElementById("result");
+        resultDiv.style.backgroundColor = colorSelect;
+        console.log(resultDiv);
+      } else {
+        alert("Please enter a valid value.");
+      }
+    }
+
+    function reset() {
+      document.getElementById("colorSelect").value = "red";
+      setDefaultResultColor();
+    }
+  </script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <script src="./assignment-1.js"></script> -->
+    <title>color changer</title>
+    <style>
+      #colors {
+        /* width: 300px; */
+        border: 2px solid;
+        height: 200px;
+        margin: 2rem;
+      }
+      input {
+        border: none;
+      }
+      .input-buttons {
+        display: flex;
+        justify-content: center;
+        column-gap: 5rem;
+      }
+      .bg-black {
+        background-color: black;
+      }
+      .bg-cyan {
+        background-color: cyan;
+        color: cyan;
+      }
+      .bg-red {
+        background-color: red;
+        color: red;
+      }
+      .bg-blue {
+        background-color: blue;
+        color: blue;
+      }
+      .width {
+        width: 4rem;
+      }
+      .border-none {
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="" class="input-buttons">
+      <input
+        type="button"
+        name="c"
+        id="c1"
+        value="black"
+        class="bg-black width border-none"
+      />
+      <input
+        type="button"
+        name="c"
+        id="c2"
+        value="blue"
+        class="bg-blue width border-none"
+      />
+      <input
+        type="button"
+        name="c"
+        id="c3"
+        value="red"
+        class="bg-red width border-none"
+      />
+      <input
+        type="button"
+        name="c"
+        id="c4"
+        value="cyan"
+        class="bg-cyan width border-none"
+      /><br />
+      <br />
+      <input type="submit" value="reset" id="btn" class="width" />
+    </form>
+    <br />
+
+    <div id="colors"></div>
+    <script>
+      const btn = document.getElementById("btn");
+      let colors = document.getElementsByName("c");
+      const show = document.getElementById("colors");
+
+      for (let index = 0; index < colors.length; index++) {
+        colors[index].onclick = function () {
+          let target = document.show;
+          show.style.backgroundColor = colors[index].value;
+        };
+      }
+    </script>
+  </body>
+</html>

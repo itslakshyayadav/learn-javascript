@@ -11,7 +11,7 @@ function setDefaultResultColor() {
 window.addEventListener("DOMContentLoaded", onPageLoad);
 
 function changeColor() {
-  const colorSelect = document.getElementById("colorSelect").value;
+  const colorSelect = document.getElementsById("click").values;
 
   if (colorSelect) {
     console.log(colorSelect);

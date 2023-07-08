@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <script src="./assignment-1.js"></script> -->
+    <title>color changer</title>
+    <style>
+      #colors {
+        /* width: 300px; */
+        border: 2px solid;
+        height: 200px;
+        margin: 2rem;
+      }
+      input {
+        border: none;
+      }
+      .input-buttons {
+        display: flex;
+        justify-content: center;
+        column-gap: 5rem;
+      }
+      .bg-black {
+        min-height: 2rem;
+        background-color: black;
+      }
+      .bg-cyan {
+        min-height: 2rem;
+        background-color: cyan;
+      }
+      .bg-red {
+        min-height: 2rem;
+        background-color: red;
+        color: red;
+      }
+      .bg-blue {
+        min-height: 2rem;
+        background-color: blue;
+        color: blue;
+      }
+      .width {
+        width: 4rem;
+      }
+      .border-none {
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button
+      type="button"
+      class="bg-black width border-none"
+      onclick="setColor('black')"
+    ></button>
+    <button
+      type="button"
+      class="bg-blue width border-none"
+      onclick="setColor('blue')"
+    ></button>
+    <button
+      type="button"
+      class="bg-red width border-none"
+      onclick="setColor('red')"
+    ></button>
+    <button
+      type="button"
+      class="bg-cyan width border-none"
+      onclick="setColor('cyan')"
+    ></button>
+
+    <br />
+    <button type="button" onclick="setColor('')">Reset</button>
+    <br />
+
+    <div id="colors"></div>
+    <script>
+      const btn = document.getElementById("btn");
+      let colors = document.getElementsByName("c");
+      const show = document.getElementById("colors");
+
+      // for (let index = 0; index < colors.length; index++) {
+      //   colors[index].onclick = function () {
+      //     let target = document.show;
+      //     show.style.backgroundColor = colors[index].value;
+      //   };
+      // }
+
+      function setColor(colorName) {
+        const show = document.getElementById("colors");
+        show.style.backgroundColor = colorName;
+      }
+    </script>
+  </body>
+</html>
