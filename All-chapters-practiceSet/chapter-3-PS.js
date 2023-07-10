@@ -22,13 +22,13 @@ for (let key in marks) {
 }
 
 // queston 3.............................
-// let correctNo = 15;
-// let i;
-// while (i != correctNo) {
-//   console.log("try again");
-//   i = prompt("enter a number");
-// }
-// console.log("you have enter correct no.");
+let correctNo = 15;
+let i;
+while (i != correctNo) {
+  console.log("try again");
+  i = prompt("enter a number");
+}
+console.log("you have enter correct no.");
 
 //question 4 .............................
 
