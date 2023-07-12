@@ -335,35 +335,35 @@ let compare = (a, b) => {
 arr1.sort(compare);
 console.log(arr1);
 
-// // reverse
-// newArray.reverse();
-// console.log(newArray);
+// reverse
+newArray.reverse();
+console.log(newArray);
 
-// // splice and slice
-// let num = [10, 62, 82, 93, 63, 75, 85];
-// let deletedValues = num.splice(0, 3, 15, 12, 20);
-// console.log(num, deletedValues);
-// // console.log(deletedValues);
-
-// let newNum = num.slice(2, 6);
-// console.log(newNum);
+// splice and slice
+let num = [10, 62, 82, 93, 63, 75, 85];
+let deletedValues = num.splice(0, 3, 15, 12, 20);
+console.log(num, deletedValues);
+//
+let newNum = num.slice(2, 6);
+console.log(newNum);
 
 // // forEach loop
-// let newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// newArr.forEach((items) => {
-//   console.log(items * items);
-// });
+let newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+newArr.forEach((items) => {
+  console.log(items * items);
+});
+//
+//
+newArr.forEach((element) => {
+  console.log("2 x", element, "=", element * 2);
+});
 
-// newArr.forEach((element) => {
-//   console.log("2 x", element, "=", element * 2);
-// });
-
-// // Array.form
+// Array.form
 // let naam = "lakshya yadav";
 // let ly = Array.from(naam);
 // console.log(ly);
 
-// // for ...of   loop
+// for ...of   loop
 // for (let ar of newArr) {
 //   console.log(ar);
 // }
@@ -379,12 +379,12 @@ console.log(arr1);
 //   return value;
 // });
 
-// // filter method ...
-// let opps = [23, 69, 8, 7, 3, 45, 96, 1];
-// let a1 = opps.filter((a) => {
-//   return a < 50;
-// });
-// console.log(a1);
+// filter method ...
+let opps = [23, 69, 8, 7, 3, 45, 96, 1];
+let a1 = opps.filter((a) => {
+  return a < 50;
+});
+console.log(a1);
 
 // let neo = [23, 69, 8, 7, 3, 45, 96, 1];
 // let reduce_fun = neo.reduce((l1, l2) => {
