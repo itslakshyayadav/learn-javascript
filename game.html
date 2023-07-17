@@ -5,31 +5,36 @@
     <title>Number Guessing Game</title>
 
     <script>
+      let randomNumber;
+
       function generateRandomNumber() {
-        let randomNumber = Math.floor(Math.random() * 100) + 1;
-        document.getElementById("randomNumber").value = randomNumber;
-        return randomNumber;
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        console.log(randomNumber);
       }
 
       function checkGuess() {
-        let originalNumber = parseInt(
-          document.getElementById("randomNumber").value
-        );
-        let userGuess = parseInt(document.getElementById("userGuess").value);
-        let score =
-          100 - parseInt(document.getElementById("guesses").innerHTML);
+        const originalNumber = randomNumber;
+        const userGuess = parseInt(document.getElementById("userGuess").value);
+        let guesses = Number(document.getElementById("guesses").innerHTML);
+        let score = 100 - guesses;
 
         if (userGuess === originalNumber) {
           alert(
             "Congratulations! Your guess is correct. Your score is " + score
           );
-        } else if (userGuess > originalNumber) {
+          return;
+        }
+
+        document.getElementById("guesses").innerHTML++;
+        guesses = Number(document.getElementById("guesses").innerHTML);
+        score = 100 - guesses;
+
+        if (userGuess > originalNumber) {
           alert(
             "Your guess is greater than the original number. Game Over! Your score is " +
               score
           );
         } else {
-          document.getElementById("guesses").innerHTML++;
           alert("Your guess is lesser than the original number. Try again!");
         }
       }
@@ -41,7 +46,6 @@
       <h1 class="text-center">Number Guessing Game</h1>
       <p class="text-center">Guess a number between 1 and 100:</p>
       <form class="text-center">
-        <input type="hidden" id="randomNumber" />
         <input type="text" id="userGuess" />
         <button type="button" onclick="checkGuess()">Check Guess</button>
       </form>
