@@ -91,3 +91,6 @@ function filterSubjects(student) {
   return filteredSubjects;
 }
 console.log(filterSubjects(student));
+
+// write a javascript program using html form to generate a random number  and store it in variable .  the program then takes an input from the user to tell them whether the guess was correct ,greater or lesser than the original number.
+// 100-(noumber of guesses) is the score of the user the program is expected to terminate once the number is greater is guessed . number should be between 1 - 100

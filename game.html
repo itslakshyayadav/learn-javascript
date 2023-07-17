@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="game.css" />
+    <title>Number Guessing Game</title>
+
+    <script>
+      function generateRandomNumber() {
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("randomNumber").value = randomNumber;
+        return randomNumber;
+      }
+
+      function checkGuess() {
+        let originalNumber = parseInt(
+          document.getElementById("randomNumber").value
+        );
+        let userGuess = parseInt(document.getElementById("userGuess").value);
+        let score =
+          100 - parseInt(document.getElementById("guesses").innerHTML);
+
+        if (userGuess === originalNumber) {
+          alert(
+            "Congratulations! Your guess is correct. Your score is " + score
+          );
+        } else if (userGuess > originalNumber) {
+          alert(
+            "Your guess is greater than the original number. Game Over! Your score is " +
+              score
+          );
+        } else {
+          document.getElementById("guesses").innerHTML++;
+          alert("Your guess is lesser than the original number. Try again!");
+        }
+      }
+    </script>
+  </head>
+
+  <body class="background-color">
+    <div class="container">
+      <h1 class="text-center">Number Guessing Game</h1>
+      <p class="text-center">Guess a number between 1 and 100:</p>
+      <form class="text-center">
+        <input type="hidden" id="randomNumber" />
+        <input type="text" id="userGuess" />
+        <button type="button" onclick="checkGuess()">Check Guess</button>
+      </form>
+      <p class="text-center">Guesses: <span id="guesses"></span></p>
+    </div>
+    <script>
+      generateRandomNumber();
+    </script>
+  </body>
+</html>
