@@ -16,11 +16,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch array map filter",
+            "name": "Launch for in",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\data-types\\arrayFilter.js"
+            "program": "${workspaceFolder}\\data-types\\forIn.js"
         }
     ]
 }

@@ -51,7 +51,3 @@ console.log(person.color("red"));
 // console.log(
 //   `I am ${person.fullName}, my age is ${person.age}. My father's name is ${person.father}`
 // );
-
-for (let b of "lakshya") {
-  console.log(b);
-}
