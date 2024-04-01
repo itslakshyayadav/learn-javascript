@@ -28,17 +28,17 @@
 // f(6) = 6 * 5 * 4 *  3 * 2 * f(0)
 
 // Recursion
-function factorial(num) {
-  if (num === 1) {
-    return 1;
-  }
-  const result = num * factorial(num - 1);
-  return result;
-}
+// function factorial(num) {
+//   if (num === 1) {
+//     return 1;
+//   }
+//   const result = num * factorial(num - 1);
+//   return result;
+// }
 
-console.log(factorial(4));
-console.log(factorial(6));
-console.log(factorial(7));
+// console.log(factorial(4));
+// console.log(factorial(6));
+// console.log(factorial(7));
 
 const members = [
   {
@@ -92,26 +92,26 @@ const members = [
 
 // console.log(findTotalMembers(members));
 
-// let total = 0;
-// for (let mem of members) {
-//   console.log(`mem`);
-//   console.log(mem);
-//   total = total + mem["totalMembers"];
-//   if (mem.members) {
-//     for (let childMem of mem.members) {
-//       console.log(childMem);
-//       total = total + childMem["totalMembers"];
-//       if (childMem.members) {
-//         for (let grandChildMem of childMem.members) {
-//           console.log(grandChildMem);
-//           total = total + grandChildMem["totalMembers"];
-//         }
-//       }
-//     }
-//   }
-// }
+let total = 0;
+for (let mem of members) {
+  console.log(`mem`);
+  console.log(mem);
+  total = total + mem["totalMembers"];
+  if (mem.members) {
+    for (let childMem of mem.members) {
+      console.log(childMem);
+      total = total + childMem["totalMembers"];
+      if (childMem.members) {
+        for (let grandChildMem of childMem.members) {
+          console.log(grandChildMem);
+          total = total + grandChildMem["totalMembers"];
+        }
+      }
+    }
+  }
+}
 
-// console.log(total);
+console.log(total);
 
 // function totalMembers(upArray) {
 //   let total = 0;
