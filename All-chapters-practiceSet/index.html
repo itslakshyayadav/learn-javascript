@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Animation</title>
+    <style>
+      /* Base styles */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #1a1a1a;
+      }
+
+      .container {
+        width: 600px;
+        height: 200px;
+        display: flex;
+        border: 5px solid black;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Bubbles */
+      .bubble {
+        width: 20%;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+      }
+
+      .bubble:nth-child(1) {
+        background-color: purple;
+      }
+      .bubble:nth-child(2) {
+        background-color: pink;
+      }
+      .bubble:nth-child(3) {
+        background-color: coral;
+      }
+      .bubble:nth-child(4) {
+        background-color: orange;
+      }
+      .bubble:nth-child(5) {
+        background-color: yellow;
+      }
+
+      /* Controls */
+      .controls {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        color: white;
+      }
+
+      .start {
+        background-color: green;
+      }
+      .reset {
+        background-color: purple;
+      }
+      .stop {
+        background-color: red;
+      }
+
+      button:active {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animation container -->
+    <div class="container">
+      <div class="bubble" id="bubble1"></div>
+      <div class="bubble" id="bubble2"></div>
+      <div class="bubble" id="bubble3"></div>
+      <div class="bubble" id="bubble4"></div>
+      <div class="bubble" id="bubble5"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="start" id="startBtn">Start</button>
+      <button class="reset" id="resetBtn">Reset</button>
+      <button class="stop" id="stopBtn">Stop</button>
+    </div>
+
+    <script>
+      const bubbles = document.querySelectorAll(".bubble");
+      const startBtn = document.getElementById("startBtn");
+      const resetBtn = document.getElementById("resetBtn");
+      const stopBtn = document.getElementById("stopBtn");
+
+      let interval = null;
+
+      // Function to start animation
+      function startAnimation() {
+        if (interval) return; // Prevent multiple intervals
+        interval = setInterval(() => {
+          bubbles.forEach((bubble, index) => {
+            // Generate random "up" or "down" movement
+            const randomMove =
+              Math.random() > 0.5 ? "translateY(-50px)" : "translateY(50px)";
+            bubble.style.transform = randomMove;
+          });
+        }, 500);
+      }
+
+      // Function to stop animation
+      function stopAnimation() {
+        clearInterval(interval);
+        interval = null;
+      }
+
+      // Function to reset animation
+      function resetAnimation() {
+        stopAnimation();
+        bubbles.forEach((bubble) => {
+          bubble.style.transform = "translateY(0)";
+        });
+      }
+
+      // Event listeners for buttons
+      startBtn.addEventListener("click", startAnimation);
+      stopBtn.addEventListener("click", stopAnimation);
+      resetBtn.addEventListener("click", resetAnimation);
+    </script>
+  </body>
+</html>

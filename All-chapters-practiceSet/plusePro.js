@@ -63,5 +63,49 @@ function findMissingValue(arr1, arr2) {
   });
   return missingVal;
 }
-
 console.log("missing Value", findMissingValue(completeArray, missingValue));
+
+// sum of array elements
+function sumOfArrayElements(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+
+console.log("sum of elements", sumOfArrayElements(array));
+
+const completeArray1 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+function evenN(completeArray1) {
+  let evenValue = [];
+  for (let i = 0; i < completeArray1.length; i++) {
+    if (completeArray1[i] % 2 === 0) {
+      evenValue.push(completeArray1[i]);
+    }
+  }
+  return evenValue;
+}
+console.log(evenN(completeArray1));
+
+function evenForEach(a) {
+  let newValueArry = [];
+  a.forEach((v) => {
+    if (v % 2 === 0) newValueArry.push(v);
+  });
+  return newValueArry;
+}
+console.log(evenForEach(completeArray1));
+
+// find factorial
+
+function findFactorial(n) {
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result = result * i;
+  }
+  return result;
+}
+
+console.log("findFactorial", findFactorial(8));
