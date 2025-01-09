@@ -13,5 +13,16 @@
 
   <body>
     <h1>Interview Questions</h1>
+    <p id="para">This is paragraph</p>
+    <div id="container"></div>
+    <script>
+      let para = document.getElementById("para");
+      para.textContent = "new paragraph here";
+
+      let container = document.getElementById("container");
+      let button = document.createElement("button");
+      button.textContent = "Click Me";
+      container.appendChild(button);
+    </script>
   </body>
 </html>

@@ -85,6 +85,37 @@ const sumOfArray = (arr) => {
   return sum;
 };
 
-const a = [1, 4, 6, 2, 3];
-const b = a.filter((ele) => ele % 2 === 0);
-console.log(b);
+// const a = [1, 4, 6, 2, 3];
+// const b = a.filter((ele) => ele * 2);
+// console.log(b);
+
+// 9 car object
+
+let car = {
+  make: "Toyota",
+  model: "Liva",
+  year: 2022,
+};
+
+car.startEngine = function () {
+  console.log("Engine Started");
+};
+
+car.startEngine();
+
+// 12 make a function to find factorial
+
+function factorial(num) {
+  if ((num === 0) | (num === 1)) {
+    return 1;
+  } else {
+    let fact = 1;
+    for (let i = 1; i <= num; i++) {
+      fact = fact * i;
+    }
+    return fact;
+  }
+}
+console.log("factorial is ", factorial(6));
+
+// 13 Random Number
