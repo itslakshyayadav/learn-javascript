@@ -119,3 +119,55 @@ function factorial(num) {
 console.log("factorial is ", factorial(6));
 
 // 13 Random Number
+
+function genrateRandomNumber(min, max) {
+  if (min > max) {
+    throw new Error("min value cannot be grater than max value");
+  }
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const writeNum = genrateRandomNumber(1, 100);
+console.log(`random number is ${writeNum}`);
+
+// 14 write a function that take an array of numbers and return a new array with only the even number
+// Higher order function
+const newArr = [2, 12, 13, 4, 5, 7, 23, 26, 44, 33, 42];
+function filterEvenNumber(arr) {
+  return arr.filter((num) => num % 2 === 0);
+}
+
+console.log(filterEvenNumber(newArr));
+console.log(newArr);
+
+// 15 Use map method to double all element
+
+function doubleArrayNum(arr) {
+  return arr.map((num) => num * 2);
+}
+console.log(doubleArrayNum(newArr));
+
+// 16 find the largest element in an array using reduce() method
+
+function findLargestElement(arr) {
+  return arr.reduce((max, current) => (current > max ? current : max));
+}
+console.log("max value in array " + findLargestElement(newArr));
+
+// 17  remove all occurrences of a specific element from array
+const arr2 = [10, 10, 20, 20, 10, 30];
+const target = 10;
+function filterElements(arr, target) {
+  return arr.filter((item) => item !== target);
+}
+console.log(filterElements(arr2, target));
+
+// 18 make a function that show current date and time
+
+function currentDateTime() {
+  let currentDate = new Date();
+  return currentDate.toLocaleString();
+}
+console.log(currentDateTime());
+
+// 18
