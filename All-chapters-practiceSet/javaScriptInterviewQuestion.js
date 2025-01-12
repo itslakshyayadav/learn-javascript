@@ -170,4 +170,123 @@ function currentDateTime() {
 }
 console.log(currentDateTime());
 
-// 18
+// 19  Implement a try-catch block to handel on error that occurs during  API  data fetching
+
+// async function fetchData() {
+//   try {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.error("we encounter some error in api" + error);
+//   }
+// }
+
+// console.log(fetchData());
+
+// 20 write a recursive function to calculate the factorial of a given number
+
+function findFactorial(n) {
+  if (n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+const facto = 5;
+console.log(`factorial of ${facto} is ${findFactorial(5)}`);
+
+// 21 Implement a recursive function to find the nth Fibonacci number.
+
+function fibonacci(n) {
+  if (n <= 1) {
+    return n;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+}
+
+console.log(fibonacci(6));
+
+// 22 create a counter function using closurse that increment and return the count on each call.
+
+function createCounter() {
+  let count = 0;
+  return function () {
+    return ++count;
+  };
+}
+
+let counter = createCounter();
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+// 23  Implement a private variable closures
+
+function createCount() {
+  let count = 0;
+
+  function increment() {
+    count++;
+    console.log("count", count);
+  }
+  return {
+    incrementCount: function () {
+      increment();
+    },
+    getCount: function () {
+      return count;
+    },
+  };
+}
+
+const count = createCount();
+count.incrementCount();
+count.incrementCount();
+
+console.log(count.getCount());
+
+// 24 create a prototype for a object with properties like name,price and quantity . Add a method to the product prototype to calculate the total value.
+
+function Product(name, price, quantity) {
+  this.name = name;
+  this.price = price;
+  this.quantity = quantity;
+}
+
+Product.prototype.calculatedValue = function () {
+  return this.price * this.quantity;
+};
+
+const product1 = new Product("Boat", 10, 5);
+const totalValue = product1.calculatedValue();
+console.log(`Total value of ${product1.name} is ${totalValue}`);
+
+const product2 = new Product("Lemon", 3, 15);
+const totalValue2 = product2.calculatedValue();
+console.log(`Total value of ${product2.name} is ${totalValue2}`);
+
+// 25 Implement a function that makes multipe API calls and processes the data using callbacks
+
+function makeAPICall(url, callback) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => callback(data))
+    .catch((err) => console.error("Error during API call:", err.message));
+}
+
+function handelData(data) {
+  console.log("Processed data", data);
+}
+
+function main() {
+  const apiUrl1 = "https://jsonplaceholder.typicode.com/posts/1";
+  const apiUrl2 = "https://jsonplaceholder.typicode.com/posts/2";
+
+  makeAPICall(apiUrl1, handelData);
+  makeAPICall(apiUrl2, handelData);
+}
+main();
+
+// 26 Rewrite the previous exercise using Promises
