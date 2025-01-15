@@ -290,3 +290,25 @@ function main() {
 main();
 
 // 26 Rewrite the previous exercise using Promises
+
+function makeAPICall2(url) {
+  return fetch(url).then((response) => response.json());
+}
+
+function handelData(data) {
+  console.log("processed Data", data);
+}
+
+function main1() {
+  const apiUrlNew = "https://jsonplaceholder.typicode.com/posts/1";
+  const apiUrlNew2 = "https://jsonplaceholder.typicode.com/posts/2";
+
+  makeAPICall2(apiUrlNew)
+    .then(handelData)
+    .catch((err) => console.log("error", err));
+  makeAPICall2(apiUrlNew2)
+    .then(handelData)
+    .catch((err) => console.log("err", err));
+}
+
+main1();
